@@ -2,6 +2,9 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/animals');
+
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
@@ -16,4 +19,4 @@ router.get('/', function(req, res){
 app.use('/api', router);
 
 app.listen(port);
-console.log('Magic happens on port ' + port);
+	console.log('Magic happens on port ' + port);
