@@ -61,9 +61,9 @@ router.route('/bears/:bear_id')
 			
 			} else {
 				res.json(bear);
-		}
+			}
+		})
 	})
-})
 
 	.put(function(req, res){
 		Bear.findById(req.params.bear_id, function(err, bear){
