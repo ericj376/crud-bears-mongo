@@ -42,10 +42,15 @@ router.route('/bears')
 		})	
 	})
 
-.get(function(req, res){
+	.get(function(req, res){
+		Bear.find(function(err, bears){
+			if(err){
 
-	res.json({title: 'what the hell am I doing?'})
-})
+			} else {
+				res.json(bears)
+			}
+		})
+	})
 
 app.use('/api', router);
 
