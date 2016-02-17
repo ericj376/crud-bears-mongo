@@ -20,7 +20,11 @@ app.get('/', function(req, res){
 });
 
 app.get('/about', function(req, res){
-	res.render('about', {title: 'What up world!'} )
+	var data = {};
+	data.title = 'About Page';
+	data.name = 'Jarome';
+	data.time = new Date();
+	res.render('about', data);
 });
 
 var port = process.env.PORT || 8080;
