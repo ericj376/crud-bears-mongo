@@ -19,6 +19,7 @@ app.get('/', function(req, res){
 	res.render('index', {title: 'What up world!'} )
 });
 
+
 app.get('/about', function(req, res){
 	var data = {};
 	data.title = 'About Page';
@@ -28,7 +29,14 @@ app.get('/about', function(req, res){
 });
 
 app.get('/bears', function(req, res){
-	res.render('bears')
+	Bear.find(function(err, bears){
+			if(err){
+				console.log(err)
+			} else {
+			res.render('bears', { bears: bears })	
+			}
+		})
+	
 });
 
 var port = process.env.PORT || 8080;

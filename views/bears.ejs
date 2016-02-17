@@ -16,7 +16,6 @@
 				<p>
 					<a href="/" class="btn btn-primary btn-lg">Back to the den!</a>
 				</p>
-				
 				<table class="table table-hover">
 					<thead>
 						<tr>
@@ -26,21 +25,13 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Buddy</td>
-							<td>34</td>
-							<td>male</td>
-						</tr>
-						<tr>
-							<td>Scott</td>
-							<td>22</td>
-							<td>male</td>
-						</tr>
-						<tr>
-							<td>Electra</td>
-							<td>25</td>
-							<td>female</td>
-						</tr>
+						<% for(var i = 0; i < bears.length; i++) { %>
+							<tr>
+								<td><%= bears[i].name %></td>
+								<td><%= bears[i].age %></td>
+								<td><%= bears[i].gender %></td>
+							</tr>
+							<% }; %>
 					</tbody>
 				</table>
 			</div>
