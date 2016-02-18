@@ -24,7 +24,7 @@
 							<th>Gender</th>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody id="bearTable">
 						<% for(var i = 0; i < bears.length; i++) { %>
 							<tr id = "<%= bears[i]._id%>">
 								<td><%= bears[i].name %></td>
@@ -45,7 +45,7 @@
 	</head>
 	<body>
 		<section>
-		<form action="/api/bears" method="POST" role="form">
+		<form role="form">
 			
 			<legend>Let's get some Bears!</legend>
 		
@@ -53,20 +53,20 @@
 				<label for="">Add a Bear!</label>
 				
 				<div>
-				<input name = "name" type="text" class="form-control" id="" placeholder="Name">
+				<input required name = "name" type="text" class="form-control" id="name" placeholder="Name">
 				</div>
 
 				<div>
-				<input name = "age" type="text" class="form-control" id="" placeholder="Age">
+				<input required name = "age" type="text" class="form-control" id="age" placeholder="Age">
 				</div>
 
 				<div>
-				<input name = "gender" type="text" class="form-control" id="" placeholder="Gender">
+				<input required name = "gender" type="text" class="form-control" id="gender" placeholder="Gender">
 				</div>
 		
 			
 		
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="submit" id = "addBear" class="btn btn-primary">Submit</button>
 		</form>
 		</section>
 		
