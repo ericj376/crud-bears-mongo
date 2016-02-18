@@ -26,25 +26,56 @@
 					</thead>
 					<tbody>
 						<% for(var i = 0; i < bears.length; i++) { %>
-							<tr>
+							<tr id = "<%= bears[i]._id%>">
 								<td><%= bears[i].name %></td>
 								<td><%= bears[i].age %></td>
 								<td><%= bears[i].gender %></td>
+								<td><button type="button" class="btn btn-danger deleteBear">Delete</button></td>
 							</tr>
 							<% }; %>
 					</tbody>
 				</table>
 			</div>
 		</div>
+
+
+
+		<link rel="stylesheet" href="main.css">
+
 	</head>
 	<body>
-		<h1 class="text-center">Hello World</h1>
+		<section>
+		<form action="/api/bears" method="POST" role="form">
+			
+			<legend>Let's get some Bears!</legend>
+		
+			<div class="form-group">
+				<label for="">Add a Bear!</label>
+				
+				<div>
+				<input name = "name" type="text" class="form-control" id="" placeholder="Name">
+				</div>
+
+				<div>
+				<input name = "age" type="text" class="form-control" id="" placeholder="Age">
+				</div>
+
+				<div>
+				<input name = "gender" type="text" class="form-control" id="" placeholder="Gender">
+				</div>
+		
+			
+		
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+		</section>
+		
 
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery.js"></script>
 		<!-- Bootstrap JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
- 		<script src="Hello World"></script>
+ 		<script src="app.js"></script>
 	</body>
 </html>
